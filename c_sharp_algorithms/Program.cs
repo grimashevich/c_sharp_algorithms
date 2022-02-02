@@ -11,7 +11,6 @@ namespace c_sharp_algorithms
         static void Main(string[] args)
         {
             Lesson1.RunLesson1();
-            
         }
     }
 }
