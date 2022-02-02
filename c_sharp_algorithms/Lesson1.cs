@@ -17,7 +17,7 @@ namespace c_sharp_algorithms
                 "Блок-схема описывает алгоритм проверки, простое число или нет.\n");
             while (true)
             {
-                Console.WriteLine("Введите целове число или exit для выхода: \n");
+                Console.WriteLine("Введите целове число или exit для выхода:");
                 userAnswer = Console.ReadLine();
                 if (int.TryParse(userAnswer, out number))
                     break;
@@ -44,9 +44,27 @@ namespace c_sharp_algorithms
             Console.WriteLine("Ответ: Сложность алгоритма O(N^3)");
         }
 
-        public static void Task3(int number)
+        public static void Task3()
         {
+            int number;
+
+            while (true)
+            {
+                Console.WriteLine("Введите число > 0 для вывода ряда фибоначчи:");
+                if (int.TryParse(Console.ReadLine(), out number) && number > 0)
+                    break;
+            }
+
+            if (number == 1)
+            {
+                Console.WriteLine("Рекурсия: \t0\nЦикл:\t\t0");
+                return;
+            }
+            Console.Write("Рекурсия: \t");
             FiboRecursion(number);
+            Console.WriteLine();
+            Console.Write("Цикл:\t\t");
+            FiboLoop(number);
             Console.WriteLine();
         }
 
@@ -67,11 +85,38 @@ namespace c_sharp_algorithms
             Console.Write($" {result[1]}");
             return (result);
         }
-/*
+
         public static void FiboLoop(int n)
         {
+            int[] fibo = new int[2] {0, 1};
 
+            Console.Write("0 1");
+            for (int i = 3; i <= n; i++)
+            {
+                fibo[1] += fibo[0];
+                fibo[0] = fibo[1] - fibo[0];
+                Console.Write($" {fibo[1]}");
+            }
         }
-*/
+        
+        public static void RunLesson1()
+        {
+            while (true)
+            {
+                Console.WriteLine("Введите номер задачи (1-3) или 0 для выхода:");
+                if (!int.TryParse(Console.ReadLine(), out int taskNum) || taskNum < 0 || taskNum > 3)
+                    continue;
+                if (taskNum == 0)
+                    break;
+                if (taskNum == 1)
+                    Task1();
+                else if (taskNum == 2)
+                    Task2();
+                else if (taskNum == 3)
+                    Task3();
+                Console.WriteLine();
+            }
+        }
+
     }
 }
