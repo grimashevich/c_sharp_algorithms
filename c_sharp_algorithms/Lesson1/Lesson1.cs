@@ -6,15 +6,20 @@ using System.Threading.Tasks;
 
 namespace c_sharp_algorithms
 {
-    internal class Lesson1
+    public class L1Task1 : ITask
     {
+        public string Name => "Алгоритм по блок-схеме.";
+
+        public string Description => "Требуется реализовать на C# функцию согласно блок-схеме." +
+                "Блок-схема описывает алгоритм проверки, простое число или нет.";
+
+        public void RunTask() => Task1();
+
         public static void Task1()
         {
             int number, d, i;
             string userAnswer;
 
-            Console.WriteLine("Требуется реализовать на C# функцию согласно блок-схеме." +
-                "Блок-схема описывает алгоритм проверки, простое число или нет.\n");
             while (true)
             {
                 Console.WriteLine("Введите целове число или exit для выхода:");
@@ -26,7 +31,7 @@ namespace c_sharp_algorithms
             }
             d = 0;
             i = 2;
-            while (i< number)
+            while (i < number)
             {
                 if (number % i == 0)
                     d++;
@@ -37,12 +42,28 @@ namespace c_sharp_algorithms
             else
                 Console.WriteLine($"Число {number} не является простым");
         }
-        
-        public static void Task2()
+    }
+
+    internal class L1Task2 : ITask
+    {
+        public string Name => "Определить сложность функции.";
+
+        public string Description => "Определить сложность алгоритма";
+
+        public void RunTask()
         {
-            Console.WriteLine("Посчитайте сложность функции");
             Console.WriteLine("Ответ: Сложность алгоритма O(N^3)");
         }
+    }
+
+    internal class L1Task3 : ITask
+    {
+        public string Name => "Фибоначчи.";
+
+        public string Description => "Вывести ряд фибоначи до n используя метод" +
+            " с рекурсией и без";
+
+        public void RunTask() => Task3();
 
         public static void Task3()
         {
@@ -88,7 +109,7 @@ namespace c_sharp_algorithms
 
         public static void FiboLoop(int n)
         {
-            int[] fibo = new int[2] {0, 1};
+            int[] fibo = new int[2] { 0, 1 };
 
             Console.Write("0 1");
             for (int i = 3; i <= n; i++)
@@ -98,25 +119,5 @@ namespace c_sharp_algorithms
                 Console.Write($" {fibo[1]}");
             }
         }
-        
-        public static void RunLesson1()
-        {
-            while (true)
-            {
-                Console.WriteLine("Введите номер задачи (1-3) или 0 для выхода:");
-                if (!int.TryParse(Console.ReadLine(), out int taskNum) || taskNum < 0 || taskNum > 3)
-                    continue;
-                if (taskNum == 0)
-                    break;
-                if (taskNum == 1)
-                    Task1();
-                else if (taskNum == 2)
-                    Task2();
-                else if (taskNum == 3)
-                    Task3();
-                Console.WriteLine();
-            }
-        }
-
     }
 }
