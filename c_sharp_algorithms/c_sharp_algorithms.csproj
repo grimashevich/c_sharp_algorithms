@@ -43,12 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Lesson1.cs" />
+    <Compile Include="ILesson.cs" />
+    <Compile Include="ITask.cs" />
+    <Compile Include="Lesson.cs" />
+    <Compile Include="Lesson2\Lesson2_DLList.cs" />
+    <Compile Include="Lesson2\ILinkedList.cs" />
+    <Compile Include="Lesson1\Lesson1.cs" />
+    <Compile Include="Lesson2\Node.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
