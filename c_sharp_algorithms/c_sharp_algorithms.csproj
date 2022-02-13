@@ -52,6 +52,9 @@
     <Compile Include="Lesson2\Node.cs" />
     <Compile Include="Lesson3\IPointDouble.cs" />
     <Compile Include="Lesson3\Lesson3.cs" />
+    <Compile Include="Lesson4\BTreeNode.cs" />
+    <Compile Include="Lesson4\BTree.cs" />
+    <Compile Include="Lesson4\Lesson4.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

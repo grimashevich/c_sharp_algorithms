@@ -9,8 +9,8 @@ namespace c_sharp_algorithms
     internal class Program
     {
         static void Main(string[] args)
-        {
-            int     lessonNumber;
+        {   
+            int lessonNumber;
             string  userAnswer;
 
             List<ILesson> lessons = BuildLessons();
@@ -44,6 +44,7 @@ namespace c_sharp_algorithms
             lessons.Add(BuildLesson1());
             lessons.Add(BuildLesson2());
             lessons.Add(BuildLesson3());
+            lessons.Add(BuildLesson4());
             return (lessons);
         }
 
@@ -74,6 +75,13 @@ namespace c_sharp_algorithms
             L3Task1 task1 = new L3Task1();
             lesson3.TaskList.Add(task1);
             return (lesson3);
+        }
+        static ILesson BuildLesson4()
+        {
+            Lesson lesson4 = new Lesson("Урок 4. Деревья, хэш-таблицы", 4);
+            L4Task1 task1 = new L4Task1();
+            lesson4.TaskList.Add(task1);
+            return (lesson4);
         }
 
     }
