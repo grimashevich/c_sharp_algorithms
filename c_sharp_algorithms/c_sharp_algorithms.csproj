@@ -55,6 +55,7 @@
     <Compile Include="Lesson4\BTreeNode.cs" />
     <Compile Include="Lesson4\BTree.cs" />
     <Compile Include="Lesson4\Lesson4.cs" />
+    <Compile Include="Lesson5\Lesson5.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
