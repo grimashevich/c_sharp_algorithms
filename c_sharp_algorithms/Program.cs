@@ -9,9 +9,8 @@ namespace c_sharp_algorithms
     internal class Program
     {
         static void Main(string[] args)
-        {   
-            int lessonNumber;
-            string  userAnswer;
+        {
+            string userAnswer;
 
             List<ILesson> lessons = BuildLessons();
             while (true)
@@ -23,7 +22,7 @@ namespace c_sharp_algorithms
                 userAnswer = Console.ReadLine();
                 if (userAnswer == "0")
                     break;
-                if (!int.TryParse(userAnswer, out lessonNumber))
+                if (!int.TryParse(userAnswer, out int lessonNumber))
                     continue;                
                 foreach (ILesson lesson in lessons)
                 {
@@ -45,6 +44,7 @@ namespace c_sharp_algorithms
             lessons.Add(BuildLesson2());
             lessons.Add(BuildLesson3());
             lessons.Add(BuildLesson4());
+            lessons.Add(BuildLesson5());
             return (lessons);
         }
 
@@ -82,6 +82,13 @@ namespace c_sharp_algorithms
             L4Task1 task1 = new L4Task1();
             lesson4.TaskList.Add(task1);
             return (lesson4);
+        }
+        static ILesson BuildLesson5()
+        {
+            Lesson lesson5 = new Lesson("Урок 5. Стек, очередь, словарь и коллекции в C#", 5);
+            L5Task1 task1 = new L5Task1();
+            lesson5.TaskList.Add(task1);
+            return (lesson5);
         }
 
     }
