@@ -1,26 +1,16 @@
-﻿using System;
+﻿using c_sharp_algorithms;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Reflection;
 
-
-namespace c_sharp_algorithms
+namespace HomeWorkLib
 {
-    internal class Program
+    public class HomeWorkRunner
     {
-        static void Main(string[] args)
+        public void RunLessons()
         {
-            Assembly asm = Assembly.LoadFrom("../../DLL/HomeWorkLib.dll");
-            Type HWRunner = asm.GetType("HomeWorkLib.HomeWorkRunner", true, true);
-            object obj = Activator.CreateInstance(HWRunner);
-            MethodInfo method = HWRunner.GetMethod("RunLessons");
-            method.Invoke(obj, new object[] {});
+            string userAnswer;
 
-/*          Пока оставлю это тут. 
- *           
- *          List<ILesson> lessons = BuildLessons();
+            List<ILesson> lessons = BuildLessons();
             while (true)
             {
                 Console.Clear();
@@ -31,7 +21,7 @@ namespace c_sharp_algorithms
                 if (userAnswer == "0")
                     break;
                 if (!int.TryParse(userAnswer, out int lessonNumber))
-                    continue;                
+                    continue;
                 foreach (ILesson lesson in lessons)
                 {
                     if (lesson.Id == lessonNumber)
@@ -41,11 +31,11 @@ namespace c_sharp_algorithms
                         Console.Clear();
                     }
                 }
-                
-            }*/
+
+            }
         }
 
-/*        static List<ILesson> BuildLessons()
+        static List<ILesson> BuildLessons()
         {
             List<ILesson> lessons = new List<ILesson>();
             lessons.Add(new Lesson("Урок 1. Блок-схемы, асимптотическая сложность, рекурсия", 1,
@@ -54,8 +44,8 @@ namespace c_sharp_algorithms
             lessons.Add(new Lesson("Урок 3. Класс, структура и дистанция", 3, new L3Task1()));
             lessons.Add(new Lesson("Урок 4. Деревья, хэш-таблицы", 4, new L4Task1()));
             lessons.Add(new Lesson("Урок 5. Стек, очередь, словарь и коллекции в C#", 5, new L5Task1()));
+            lessons.Add(new Lesson("Урок 6. Загрузка ДЗ из DLL", 4));
             return (lessons);
-        }*/
-
+        }
     }
 }
